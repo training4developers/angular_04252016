@@ -1,0 +1,40 @@
+﻿<div ng-app="WidgetApp">
+
+	@*<table>
+		<thead>
+			<tr>
+				<th>Make</th>
+				<th>Model</th>
+				<th>Year</th>
+				<th>Color</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="car in cars">
+				<td>{{car.make}}</td>
+				<td>{{car.model}}</td>
+				<td>{{car.year}}</td>
+				<td>{{car.color}}</td>
+			</tr>
+		</tbody>
+	</table>*@
+
+
+	<div ng-controller="HomeCtrl">
+
+		Color Filter: <input ng-model="colorFilter" />
+
+		<ul>
+			<li ng-repeat="color in colors | filter:colorFilter | orderBy:'toString()':true">{{color}}</li>
+		</ul>
+
+		New Color: <input ng-model="newColor" /><button ng-click="addColor()">Add Color</button>
+
+
+		<ul>
+			<li ng-repeat="country in countries | orderBy:'name':true">{{country.name}} - {{country.code}}</li>
+		</ul>
+
+	</div>
+
+</div>

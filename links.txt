@@ -1,0 +1,7 @@
+https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5
+
+https://www.w3.org/Style/CSS/specs.en.html
+
+https://github.com/getify/You-Dont-Know-JS
+
+https://specificity.keegan.st/

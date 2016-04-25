@@ -1,0 +1,20 @@
+﻿<div ng-app="WidgetApp">
+	<div ng-controller="HomeCtrl">
+
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th><th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="country in countries">
+					<td>{{country.name}}</td>
+					<td><button ng-click="edit(country.code)">Edit</button></td>
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+
+</div>
