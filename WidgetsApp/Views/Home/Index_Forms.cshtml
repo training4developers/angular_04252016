@@ -1,0 +1,97 @@
+﻿<style>
+
+	input.ng-touched.ng-invalid {
+		border: 2px solid red;
+	}
+
+	textarea {
+		vertical-align: top;
+	}
+
+</style>
+<div ng-app="WidgetApp">
+
+	<div ng-controller="HomeCtrl">
+
+		<input ng-model="showMe" type="checkbox"> Show Contact Form
+
+		<div ng-if="showMe">
+
+			<form name="contactForm" novalidate>
+
+				<div>
+					<label>
+						First Name:
+						<input type="text" ng-model="contact.firstName" name="contactFirstName" required>
+					</label>
+					<span ng-show="contactForm.contactFirstName.$invalid && contactForm.contactFirstName.$touched">
+						First name is required!!!!!!!!!
+					</span>
+				</div>
+
+				<div>
+					<label>
+						Last Name:
+						<input type="text" ng-model="contact.lastName" name="contactLastName" required>
+					</label>
+				</div>
+
+				<div>
+					<label>
+						Are you a customer:
+						<input type="checkbox" ng-model="contact.isCustomer" name="contactIsCustomer">
+					</label>
+				</div>
+
+				<fieldset>
+					<legend>Is Steve a?</legend>
+					<label>
+						Super Hero:
+						<input type="radio" ng-model="contact.kindOfLegend"
+									 name="contactKindOfLegend" value="superhero">
+					</label>
+					<label>
+						Super Villain:
+						<input type="radio" ng-model="contact.kindOfLegend"
+									 name="contactKindOfLegend" value="supervillain">
+					</label>
+					<label>
+						Mutant:
+						<input type="radio" ng-model="contact.kindOfLegend"
+									 name="contactKindOfLegend" value="mutant">
+					</label>
+					<label>
+						Complicated:
+						<input type="radio" ng-model="contact.kindOfLegend"
+									 name="contactKindOfLegend" value="complicated">
+					</label>
+				</fieldset>
+
+				<div>
+					<label>
+						Comments: <textarea ng-model="contact.comments" name="contentComments" rows="5" cols="40"></textarea>
+					</label>
+				</div>
+
+				<div>
+					<label>
+						Country: <select ng-model="contact.country" name="contactCountry"
+											 ng-options="country.code as country.name group by country.continent for country in countries">
+							<option value="">Select One...</option>
+						</select>
+					</label>
+
+
+				</div>
+
+				<button type="button" ng-click="submitContact(contactForm, contact)">Submit</button>
+
+
+			</form>
+
+		</div>
+
+
+	</div>
+
+</div>

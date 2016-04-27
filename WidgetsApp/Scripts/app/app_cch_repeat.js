@@ -2,7 +2,7 @@
 	.directive("cchRepeat", function () {
 
 		return {
-			transclude: 'element',
+			transclude: true,
 			compile: function (tElement, tAttrs) {
 
 				var tokens = tAttrs.cchRepeat.split(" ");
@@ -15,17 +15,14 @@
 				return function (scope, element, attrs, ctrl, transclude) {
 
 					var childScopes = [];
-					var itemElements = [];
 
 					scope.$watchCollection(collectionName, function () {
 
-						var lastElement = element;
-
-						itemElements.forEach(function (itemElement) {
-							angular.element(itemElement).scope().$destroy();
-							itemElement.remove();
+						element.empty();
+						childScopes.forEach(function (childScope) {
+							childScope.$destroy();
 						});
-						itemElements = [];
+						childScopes = [];
 
 						scope.$eval(collectionExpr).forEach(function (item) {
 
@@ -34,11 +31,8 @@
 							transclude(childScope, function (clone, scope) {
 
 								scope[itemName] = item;
-								lastElement.after(clone);
+								element.append(clone);
 								childScopes.push(scope);
-
-								lastElement = clone;
-								itemElements.push(clone);
 
 							});
 

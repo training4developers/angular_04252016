@@ -220,6 +220,7 @@
     <Content Include="Content\partials\app.widget-list.tpl.html" />
     <Content Include="Content\partials\app.widget-edit.tpl.html" />
     <Content Include="Content\partials\app.widget-view.tpl.html" />
+    <Content Include="Content\partials\demo.html" />
     <Content Include="Content\Site.css" />
     <Content Include="css\jasmine.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -236,6 +237,13 @@
     <Content Include="Scripts\angular-ui-router.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\app\app_cch_repeat.js" />
+    <Content Include="Scripts\app\app_compile.js" />
+    <Content Include="Scripts\app\app_transclusion.js" />
+    <Content Include="Scripts\app\restrict-option.js" />
+    <Content Include="Scripts\app\app_dir_four_forms.js" />
+    <Content Include="Scripts\app\app_watches.js" />
+    <Content Include="Scripts\app\app_forms.js" />
     <Content Include="Scripts\app\app_function_objs.js" />
     <Content Include="Scripts\app\app_ng_repeat.js" />
     <Content Include="Scripts\app\app_two_way.js" />
@@ -288,6 +296,8 @@
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Views\Home\Index_NgRepeat.cshtml" />
+    <Content Include="Views\Home\Index_Forms.cshtml" />
+    <Content Include="Views\Home\Index_NgHrefHgSrc.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
