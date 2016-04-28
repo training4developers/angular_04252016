@@ -233,10 +233,18 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Icon.png" />
     <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-sanitize.js" />
+    <Content Include="Scripts\angular-sanitize.min.js" />
     <Content Include="Scripts\angular-ui-router.js" />
     <Content Include="Scripts\angular-ui-router.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\app\app_priority.js" />
+    <Content Include="Scripts\app\app_tab_dialog.js" />
+    <Content Include="Scripts\app\app_validator.js" />
+    <Content Include="Scripts\app\app_require.js" />
+    <Content Include="Scripts\app\app_isolated_scope.js" />
+    <Content Include="Scripts\app\app_cch_repeat_element_trans.js" />
     <Content Include="Scripts\app\app_cch_repeat.js" />
     <Content Include="Scripts\app\app_compile.js" />
     <Content Include="Scripts\app\app_transclusion.js" />
@@ -251,6 +259,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\angular-sanitize.min.js.map" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jasmine-html.js" />
     <Content Include="Scripts\jasmine.js" />
@@ -298,6 +307,8 @@
     <Content Include="Views\Home\Index_NgRepeat.cshtml" />
     <Content Include="Views\Home\Index_Forms.cshtml" />
     <Content Include="Views\Home\Index_NgHrefHgSrc.cshtml" />
+    <Content Include="Views\Home\Index_IsolatedScope.cshtml" />
+    <Content Include="Views\Home\Index_TabDialog.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

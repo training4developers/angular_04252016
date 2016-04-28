@@ -1,13 +1,7 @@
 ﻿<div ng-app="WidgetApp">
 
-	<div ng-controller="HomeCtrl">
+	<input ng-model="coolMessage">
 
-		<ul>
-			<li>First Item</li>
-			<li cch-repeat="color in colors | orderBy:'toString()'">{{color}}</li>
-			<li>Last Item</li>
-		</ul>
-
-	</div>
+	<div my-dir id="dv-rocks" cool="{{coolMessage}}" fabulous-attack-dog="samantha"></div>
 
 </div>

@@ -1,0 +1,40 @@
+﻿<style>
+
+	.tabs > ul {
+		list-style-type:none;
+		margin:0;
+		padding:0;
+	}
+
+	.tabs > ul > li {
+		display:inline-block;
+		border:1px solid black;
+		padding:5px;
+	}
+
+	.tabs > ul > li.active {
+		font-weight:bold;
+	}
+
+	.tabs > div {
+		border: 1px solid black;
+		margin:0;
+		padding:5px;
+	}
+
+
+</style>
+<div ng-app="WidgetApp">
+
+	<div ng-controller="HomeCtrl">
+
+		<tabs active-tab-id="tab2">
+			<tab id="tab1" caption="Tab 1"><h1>Tab 1 Content...</h1><script>alert('Mahesh is the man!');</script></tab>
+			<tab id="tab2" caption="Tab 2">Tab 2 Content...</tab>
+			<tab id="tab3" caption="Tab 3">Tab 3 Content...</tab>
+			<tab id="tab4" caption="Tab 4">Tab 4 Content...</tab>
+		</tabs>
+
+	</div>
+
+</div>

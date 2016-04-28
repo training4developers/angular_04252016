@@ -1,0 +1,13 @@
+﻿<div ng-app="WidgetApp">
+
+	<div ng-controller="HomeCtrl">
+		@*HomeCtrl Scope ID: {{$id}}, Message: {{message}}*@
+
+		Home: {{message}}
+		<div my-dir msg="message" one-way="{{ message | uppercase }}" click-me="doIt()"></div>
+
+
+
+	</div>
+
+</div>

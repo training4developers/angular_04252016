@@ -1,66 +1,27 @@
 ﻿angular.module("WidgetApp", [])
-	.directive("cchRepeat", function () {
+	.directive("myDir", function () {
 
 		return {
-			transclude: 'element',
-			compile: function (tElement, tAttrs) {
 
-				var tokens = tAttrs.cchRepeat.split(" ");
-				var collectionName = tokens[2];
-				var itemName = tokens[0];
-				var collectionExpr = tokens.slice(2).join(" ");
+			link: function (scope, element, attrs) {
 
-				console.log(collectionExpr);
+				console.dir(attrs);
 
-				return function (scope, element, attrs, ctrl, transclude) {
+				attrs.$addClass("jonathan");
+				attrs.$removeClass("jonathan");
 
-					var childScopes = [];
-					var itemElements = [];
+				console.log(attrs.$normalize("steve-kavitha"));
 
-					scope.$watchCollection(collectionName, function () {
-
-						var lastElement = element;
-
-						itemElements.forEach(function (itemElement) {
-							angular.element(itemElement).scope().$destroy();
-							itemElement.remove();
-						});
-						itemElements = [];
-
-						scope.$eval(collectionExpr).forEach(function (item) {
-
-							var childScope = scope.$new();
-
-							transclude(childScope, function (clone, scope) {
-
-								scope[itemName] = item;
-								lastElement.after(clone);
-								childScopes.push(scope);
-
-								lastElement = clone;
-								itemElements.push(clone);
-
-							});
-
-						});
-
-					});
+				attrs.$observe("cool", function (value) {
+					console.log("cool: " + value);
+				})
 
 
-				};
 			}
 
-		};
-
+		}
 
 	})
-	.controller("HomeCtrl", function($scope, $timeout) {
-
-		$scope.colors = ["red", "blue", "green", "orange"];
-
-		$timeout(function () {
-			console.log("added purple");
-			$scope.colors.push("purple");
-		}, 5000);
-
+	.controller("HomeCtrl", function ($scope) {
+		$scope.coolMessage = "Hi Class!";
 	});
