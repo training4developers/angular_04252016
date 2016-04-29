@@ -1,27 +1,19 @@
 ﻿angular.module("WidgetApp", [])
-	.directive("myDir", function () {
+	.filter("cchUpperCase", function () {
 
-		return {
-
-			link: function (scope, element, attrs) {
-
-				console.dir(attrs);
-
-				attrs.$addClass("jonathan");
-				attrs.$removeClass("jonathan");
-
-				console.log(attrs.$normalize("steve-kavitha"));
-
-				attrs.$observe("cool", function (value) {
-					console.log("cool: " + value);
-				})
-
-
-			}
-
-		}
+		return function (value) {
+			return String(value).toLowerCase();
+		};
 
 	})
-	.controller("HomeCtrl", function ($scope) {
-		$scope.coolMessage = "Hi Class!";
+	.filter("cchAppend", function () {
+
+		return function (value, strToAppend) {
+			return String(value) + String(strToAppend);
+		};
+
+	}).controller("HomeCtrl", function ($scope) {
+
+		$scope.message = "Hi Class!";
+
 	});
